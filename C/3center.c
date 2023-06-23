@@ -86,7 +86,7 @@ int main (int argc, char** argv) {
 	float min_cost = solve_3center(p,n,c);
 
     /* print the minimal cost for the 3-center problem */
-    printf ("minimal cost = %g\n",min_cost);
+    printf ("minimal cost = %.6f\n",min_cost);
 
     /* print an optimal solution to the 3 center problem */
     printf ("centers : %d %d %d\n",c[0],c[1],c[2]);
