@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 # read the points
 p = np.loadtxt(sys.argv[1],dtype=np.float32)
 
-# plot the points
+# set the aspect ratio to equal
 plt.gca().set_aspect('equal')
-plt.scatter (p[:,0],p[:,1],s=5,color='black')
 
 # plot the centers (if additional command line arguments present)
 if (len(sys.argv)-3 > 0):
@@ -17,9 +16,11 @@ if (len(sys.argv)-3 > 0):
         dist_sq[i] = np.sum((p-p[ctr[i]])*(p-p[ctr[i]]),axis=1)
     clu = np.argmin(dist_sq,axis=0)
     ex = np.argmax(np.min(dist_sq,axis=0))
-    plt.scatter (p[:,0],p[:,1],c=clu,cmap="tab10",s=10)
+    plt.scatter (p[:,0],p[:,1],c=clu,cmap="tab10",s=5,alpha=0.5)
     plt.scatter (p[ctr,0],p[ctr,1],c=range(len(ctr)),cmap="tab10",s=100)
     plt.scatter (p[ex,0],p[ex,1],s=50,facecolors='none', edgecolors='black')
+else:
+    plt.scatter (p[:,0],p[:,1],s=5,color='black')
 
 #save the plot as an image
 plt.savefig(sys.argv[2])
