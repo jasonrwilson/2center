@@ -7,7 +7,7 @@ p = np.loadtxt(sys.argv[1],dtype=np.float32)
 
 # plot the points
 plt.gca().set_aspect('equal')
-plt.scatter (p[:,0],p[:,1],s=2,color='black')
+plt.scatter (p[:,0],p[:,1],s=5,color='black')
 
 # plot the centers (if additional command line arguments present)
 if (len(sys.argv)-3 > 0):
