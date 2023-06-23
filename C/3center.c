@@ -88,7 +88,7 @@ int main (int argc, char** argv) {
     /* print the minimal cost for the 3-center problem */
     printf ("minimal cost = %.6f\n",min_cost);
 
-    /* print an optimal solution to the 3 center problem */
+    /* print an optimal solution to the 3-center problem */
     printf ("centers : %d %d %d\n",c[0],c[1],c[2]);
 
 	/* program executed successfully */
